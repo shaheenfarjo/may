@@ -143,45 +143,6 @@ export default function Page() {
                 </h2>
               </div>
             </a>
-
-            {/* Project 3 */}
-            <a href="#chroma-null" className="project-card" id="chroma-null">
-              <div className="project-image-wrapper" style={{ height: "700px" }}>
-                <Image
-                  src="/abstract-experimental-art-chroma-minimalist-geomet.jpg"
-                  alt="Abstract Art"
-                  className="project-image"
-                  width={1200}
-                  height={700}
-                  unoptimized
-                />
-              </div>
-              <div className="project-info">
-                <span className="project-category">Experimental / 2023</span>
-                <h2 className="project-title" data-text="CHROMA NULL">
-                  CHROMA NULL
-                </h2>
-              </div>
-            </a>
-
-            {/* Project 4 */}
-            <a href="#kinetic-form" className="project-card" id="kinetic-form">
-              <div className="project-image-wrapper" style={{ height: "500px" }}>
-                <Image
-                  src="/kinetic-industrial-sculpture-metal-geometric-form-.jpg"
-                  alt="Sculpture"
-                  className="project-image"
-                  width={1200}
-                  height={500}
-                  unoptimized
-                />
-              </div>
-              <div className="project-info">
-                <span className="project-category">Industrial / 2024</span>
-                <h2 className="project-title" data-text="KINETIC FORM">
-                  KINETIC FORM
-                </h2>
-              </div>
               <div
                 className="line-accent"
                 style={{ width: "200px", height: "1px", bottom: "-20px", right: "-40px", transform: "rotate(-45deg)" }}
