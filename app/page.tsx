@@ -125,11 +125,11 @@ export default function Page() {
             </a>
 
             {/* Project 2 */}
-            <a href="#silk-steel" className="project-card" id="silk-steel">
+            <a href="#tedxbaghdsd" className="project-card" id="tedxbaghdad">
               <div className="project-image-wrapper" style={{ height: "450px" }}>
                 <Image
-                  src="/avant-garde-fashion-editorial-silk-steel-dramatic-.jpg"
-                  alt="Avant-garde Fashion"
+                  src="TEDxBaghdad.jpg"
+                  alt="TEDxBaghdad"
                   className="project-image"
                   width={1200}
                   height={450}
@@ -137,9 +137,9 @@ export default function Page() {
                 />
               </div>
               <div className="project-info">
-                <span className="project-category">Editorial / 2024</span>
-                <h2 className="project-title" data-text="SILK &amp; STEEL">
-                  SILK &amp; STEEL
+                <span className="project-category">TEDxBaghdad / 2024</span>
+                <h2 className="project-title" data-text="Booth Exhibition">
+                  Booth Exhibition
                 </h2>
               </div>
             </a>
