@@ -80,8 +80,8 @@ export default function Page() {
         <header>
           <div className="geometric-accent-1"></div>
           <h1 className="hero-title">
-            <span>RADICAL</span>
-            <span>DISORDER</span>
+            <span>About</span>
+            <span>Me</span>
           </h1>
           <p className="hero-subtitle">
             An experimental design practice navigating the intersection of brutalist architecture and digital entropy.
@@ -105,11 +105,11 @@ export default function Page() {
 
           <div className="diagonal-grid">
             {/* Project 1 */}
-            <a href="#neo-monolith" className="project-card" id="neo-monolith">
+            <a href="#primaryschool" className="project-card" id="primaryschool">
               <div className="project-image-wrapper">
                 <Image
                   src="/CommunityPrimarySchool.jpg"
-                  alt="Brutalist Architecture"
+                  alt="Community Primary School"
                   className="project-image"
                   width={1200}
                   height={600}
@@ -118,7 +118,7 @@ export default function Page() {
               </div>
               <div className="project-info">
                 <span className="project-category">Community / 2025</span>
-                <h2 className="project-title" data-text="NEO-MONOLITH">
+                <h2 className="project-title" data-text="Primary School">
                   Primary School
                 </h2>
               </div>
