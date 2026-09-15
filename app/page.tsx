@@ -108,7 +108,7 @@ export default function Page() {
             <a href="#neo-monolith" className="project-card" id="neo-monolith">
               <div className="project-image-wrapper">
                 <Image
-                  src="/dramatic-brutalist-concrete-architecture-monolith-.jpg"
+                  src="/CommunityPrimarySchool.jpg"
                   alt="Brutalist Architecture"
                   className="project-image"
                   width={1200}
@@ -117,9 +117,9 @@ export default function Page() {
                 />
               </div>
               <div className="project-info">
-                <span className="project-category">Architecture / 2023</span>
+                <span className="project-category">Community / 2025</span>
                 <h2 className="project-title" data-text="NEO-MONOLITH">
-                  NEO-MONOLITH
+                  Primary School
                 </h2>
               </div>
               <div className="line-accent" style={{ width: "100%", height: "1px", top: 0, left: "-50px" }}></div>
