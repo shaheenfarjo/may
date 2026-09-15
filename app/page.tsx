@@ -142,7 +142,6 @@ export default function Page() {
                   Booth Exhibition
                 </h2>
               </div>
-            </a>
               <div
                 className="line-accent"
                 style={{ width: "200px", height: "1px", bottom: "-20px", right: "-40px", transform: "rotate(-45deg)" }}
