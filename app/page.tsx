@@ -66,7 +66,7 @@ export default function Page() {
       <div className="grid-overlay"></div>
 
       <nav>
-        <div className="nav-logo">VOID &amp; FORM</div>
+        <div className="nav-logo">Mohammed Ali Yassin</div>
         <div className="nav-links">
           <a href="#projects">Projects</a>
           <a href="#atelier">Atelier</a>
@@ -196,10 +196,10 @@ export default function Page() {
           <div className="section-label">Atelier</div>
           <div style={{ marginTop: "40px", maxWidth: "800px" }}>
             <h2 style={{ fontSize: "48px", fontWeight: 800, marginBottom: "20px", fontFamily: "var(--font-syne)" }}>
-              OUR PRACTICE
+              MY PRACTICE
             </h2>
             <p style={{ fontSize: "18px", lineHeight: 1.8, opacity: 0.8 }}>
-              We operate at the crossroads of architecture, editorial design, and experimental art. Our studio embraces
+              I operate at the crossroads of architecture, editorial design, and experimental art. I embrace
               radical disorder as a methodology, crafting visual systems that challenge conventions and push the
               boundaries of contemporary design.
             </p>
