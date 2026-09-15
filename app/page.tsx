@@ -72,7 +72,7 @@ export default function Page() {
           <a href="#atelier">Atelier</a>
           <a href="#contact">Contact</a>
         </div>
-        <div className="nav-copyright">©25</div>
+        <div className="nav-copyright">©26</div>
       </nav>
 
       <div className="container">
@@ -199,8 +199,8 @@ export default function Page() {
               MY PRACTICE
             </h2>
             <p style={{ fontSize: "18px", lineHeight: 1.8, opacity: 0.8 }}>
-              I operate at the crossroads of architecture, editorial design, and experimental art. I embrace
-              radical disorder as a methodology, crafting visual systems that challenge conventions and push the
+              I operate at the crossroads of architecture, design, and art. I embrace
+              experimentation as a methodology, crafting visuals that challenge conventions and push the
               boundaries of contemporary design.
             </p>
           </div>
@@ -210,63 +210,29 @@ export default function Page() {
         <footer id="contact">
           <div className="footer-grid">
             <div>
-              <a href="mailto:hello@voidform.studio" className="footer-cta">
+              <a href="mailto:hello@mohammedaliyassin.com" className="footer-cta">
                 LET&apos;S BLUR THE LINES
               </a>
             </div>
             <div>
               <ul className="social-list">
                 <li>
-                  <a href="#">Instagram</a>
+                  <a href="https://instagram.com/mohammed.ali.yassin">Instagram</a>
                 </li>
                 <li>
-                  <a href="#">Are.na</a>
-                </li>
-                <li>
-                  <a href="#">Behance</a>
+                  <a href="https://behance.com/mohammedaliyassin">Behance</a>
                 </li>
               </ul>
             </div>
             <div style={{ textAlign: "right" }}>
               <p style={{ fontSize: "12px", opacity: 0.6 }}>
-                LOCATED IN THE ETHER
+                LOCATED IN BAGHDAD
                 <br />
-                EST. 2024
+                BORN 2004
               </p>
             </div>
           </div>
-          <div
-            style={{
-              marginTop: "60px",
-              paddingTop: "30px",
-              borderTop: "1px solid rgba(0,0,0,0.1)",
-              textAlign: "center",
-              fontSize: "12px",
-              opacity: 0.5,
-            }}
-          >
-            <p>
-              Designed by{" "}
-              <a
-                href="https://1ui.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "underline" }}
-              >
-                1UI.dev
-              </a>
-              {" · "}
-              Built using{" "}
-              <a
-                href="https://v0.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "underline" }}
-              >
-                v0.app
-              </a>
-            </p>
-          </div>
+          <div></div>
         </footer>
       </div>
 
