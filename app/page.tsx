@@ -84,8 +84,7 @@ export default function Page() {
             <span>Me</span>
           </h1>
           <p className="hero-subtitle">
-            An experimental design practice navigating the intersection of brutalist architecture and digital entropy.
-            We build visual systems that challenge the status quo.
+            I am a senior architecture student at the University of Technology and an active member of the Archi Youth Community. Driven by a highly creative approach to spatial design, my work explores the intersection of futuristic aesthetics and functional environments.
           </p>
           <div
             style={{
