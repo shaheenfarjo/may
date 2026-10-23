@@ -1,232 +1,150 @@
-"use client"
-
-import { useEffect, useState } from "react"
 import Image from "next/image"
+import { PointerParallax } from "@/components/pointer-parallax"
+import { projects, site } from "@/lib/site"
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  url: site.url,
+  email: `mailto:${site.email}`,
+  birthDate: "2004",
+  jobTitle: "Architecture Student",
+  affiliation: { "@type": "CollegeOrUniversity", name: "University of Technology, Iraq" },
+  address: { "@type": "PostalAddress", addressLocality: "Baghdad", addressCountry: "IQ" },
+  sameAs: site.social.map((s) => s.href),
+}
 
 export default function Page() {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768)
-    }
-
-    checkMobile()
-    window.addEventListener("resize", checkMobile)
-
-    const handleNavClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement
-      if (target.tagName === "A" && target.getAttribute("href")?.startsWith("#")) {
-        e.preventDefault()
-        const id = target.getAttribute("href")?.slice(1)
-        const element = document.getElementById(id || "")
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" })
-        }
-      }
-    }
-
-    document.addEventListener("click", handleNavClick)
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (window.innerWidth > 768) {
-        const amount = 10
-        const x = (e.clientX / window.innerWidth - 0.5) * amount
-        const y = (e.clientY / window.innerHeight - 0.5) * amount
-
-        document.querySelectorAll(".project-image").forEach((img) => {
-          if ((img as HTMLElement).parentElement?.matches(":hover")) {
-            ;(img as HTMLElement).style.transform = `scale(1.1) translate(${x}px, ${y}px)`
-          }
-        })
-      }
-    }
-
-    document.addEventListener("mousemove", handleMouseMove)
-
-    // Add distortion class to titles on hover for more glitchy feel
-    const titles = document.querySelectorAll(".project-title")
-    titles.forEach((title) => {
-      const handleEnter = () => title.classList.add("distort-active")
-      const handleLeave = () => title.classList.remove("distort-active")
-
-      title.addEventListener("mouseenter", handleEnter)
-      title.addEventListener("mouseleave", handleLeave)
-    })
-
-    return () => {
-      window.removeEventListener("resize", checkMobile)
-      document.removeEventListener("click", handleNavClick)
-      document.removeEventListener("mousemove", handleMouseMove)
-    }
-  }, [])
-
   return (
     <>
-      <div className="grid-overlay"></div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
+      <PointerParallax />
 
-      <nav>
-        <div className="nav-logo">Mohammed Ali Yassin</div>
-        <div className="nav-links">
-          <a href="#projects">Projects</a>
-          <a href="#atelier">Atelier</a>
-          <a href="#contact">Contact</a>
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
+
+      <div className="grid-overlay" aria-hidden="true" />
+
+      <nav aria-label="Primary">
+        <a href="#top" className="nav-logo">
+          {site.name}
+        </a>
+        <ul className="nav-links">
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#atelier">Atelier</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+        <div className="nav-copyright" aria-hidden="true">
+          ©26
         </div>
-        <div className="nav-copyright">©26</div>
       </nav>
 
-      <div className="container">
-        {/* Hero Section */}
-        <header>
-          <div className="geometric-accent-1"></div>
-          <h1 className="hero-title">
-            <span>About</span>
-            <span>Me</span>
-          </h1>
-          <p className="hero-subtitle">
-            I am a senior architecture student at the University of Technology and an active member of the Archi Youth Community. Driven by a highly creative approach to spatial design, my work explores the intersection of futuristic aesthetics and functional environments.
-          </p>
-          <div
-            style={{
-              position: "absolute",
-              bottom: "60px",
-              left: 0,
-              width: "300px",
-              height: "1px",
-              background: "black",
-            }}
-          ></div>
-        </header>
+      <div className="container" id="top">
+        <main id="main">
+          {/* Hero */}
+          <header className="hero">
+            <div className="geometric-accent-1" aria-hidden="true" />
+            <h1 className="hero-title">
+              <span>About</span>
+              <span>Me</span>
+            </h1>
+            <p className="hero-subtitle">
+              I am a senior architecture student at the University of Technology and an active member of the Archi
+              Youth Community. Driven by a highly creative approach to spatial design, my work explores the
+              intersection of futuristic aesthetics and functional environments.
+            </p>
+            <div className="hero-rule" aria-hidden="true" />
+          </header>
 
-        {/* Portfolio Section */}
-        <main className="portfolio-section" id="projects">
-          <div className="section-label">Selected Works</div>
+          {/* Portfolio */}
+          <section className="portfolio-section" id="projects" aria-labelledby="projects-label">
+            <h2 className="section-label" id="projects-label">
+              Selected Works
+            </h2>
 
-          <div className="diagonal-grid">
-            {/* Project 1 */}
-            <a href="#primaryschool" className="project-card" id="primaryschool">
-              <div className="project-image-wrapper">
-                <Image
-                  src="/CommunityPrimarySchool.jpg"
-                  alt="Community Primary School"
-                  className="project-image"
-                  width={1200}
-                  height={600}
-                  unoptimized
-                />
-              </div>
-              <div className="project-info">
-                <span className="project-category">Community / 2025</span>
-                <h2 className="project-title" data-text="Primary School">
-                  Primary School
-                </h2>
-              </div>
-              <div className="line-accent" style={{ width: "100%", height: "1px", top: 0, left: "-50px" }}></div>
-            </a>
+            <div className="diagonal-grid">
+              {projects.map((project) => (
+                <article className="project-card" id={project.slug} key={project.slug}>
+                  <div className="project-image-wrapper">
+                    <Image
+                      src={project.image}
+                      alt={project.alt}
+                      className="project-image"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 600px"
+                    />
+                  </div>
+                  <div className="project-info">
+                    <p className="project-category">
+                      {project.category} / <time dateTime={String(project.year)}>{project.year}</time>
+                    </p>
+                    <h3 className="project-title" data-text={project.title}>
+                      {project.title}
+                    </h3>
+                  </div>
+                  <div className="line-accent" aria-hidden="true" />
+                </article>
+              ))}
+            </div>
+          </section>
 
-            {/* Project 2 */}
-            <a href="#tedxbaghdsd" className="project-card" id="tedxbaghdad">
-              <div className="project-image-wrapper" style={{ height: "450px" }}>
-                <Image
-                  src="TEDxBaghdad.jpg"
-                  alt="TEDxBaghdad"
-                  className="project-image"
-                  width={1200}
-                  height={450}
-                  unoptimized
-                />
-              </div>
-              <div className="project-info">
-                <span className="project-category">TEDxBaghdad / 2024</span>
-                <h2 className="project-title" data-text="Booth Exhibition">
-                  Booth Exhibition
-                </h2>
-              </div>
-              <div
-                className="line-accent"
-                style={{ width: "200px", height: "1px", bottom: "-20px", right: "-40px", transform: "rotate(-45deg)" }}
-              ></div>
-            </a>
-          </div>
+          {/* Atelier */}
+          <section className="atelier" id="atelier" aria-labelledby="atelier-label">
+            <h2 className="section-label" id="atelier-label">
+              Atelier
+            </h2>
+            <div className="atelier-body">
+              <h3 className="atelier-title">My Practice</h3>
+              <p className="atelier-text">
+                I operate at the crossroads of architecture, design, and art. I embrace experimentation as a
+                methodology, crafting visuals that challenge conventions and push the boundaries of contemporary
+                design.
+              </p>
+            </div>
+          </section>
         </main>
 
-        {/* Atelier Section */}
-        <section id="atelier" style={{ margin: "120px 0", padding: "80px 0", borderTop: "1px solid rgba(0,0,0,0.1)" }}>
-          <div className="section-label">Atelier</div>
-          <div style={{ marginTop: "40px", maxWidth: "800px" }}>
-            <h2 style={{ fontSize: "48px", fontWeight: 800, marginBottom: "20px", fontFamily: "var(--font-syne)" }}>
-              MY PRACTICE
-            </h2>
-            <p style={{ fontSize: "18px", lineHeight: 1.8, opacity: 0.8 }}>
-              I operate at the crossroads of architecture, design, and art. I embrace
-              experimentation as a methodology, crafting visuals that challenge conventions and push the
-              boundaries of contemporary design.
-            </p>
-          </div>
-        </section>
-
-        {/* Footer */}
+        {/* Contact */}
         <footer id="contact">
           <div className="footer-grid">
             <div>
-              <a href="mailto:hello@mohammedaliyassin.com" className="footer-cta">
-                LET&apos;S BLUR THE LINES
+              <a href={`mailto:${site.email}`} className="footer-cta">
+                Let&apos;s blur the lines
               </a>
             </div>
-            <div>
-              <ul className="social-list">
-                <li>
-                  <a href="https://instagram.com/mohammed.ali.yassin">Instagram</a>
+            <ul className="social-list">
+              {site.social.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} target="_blank" rel="noopener noreferrer">
+                    {link.label}
+                    <span className="visually-hidden"> (opens in a new tab)</span>
+                  </a>
                 </li>
-                <li>
-                  <a href="https://behance.com/mohammedaliyassin">Behance</a>
-                </li>
-              </ul>
-            </div>
-            <div style={{ textAlign: "right" }}>
-              <p style={{ fontSize: "12px", opacity: 0.6 }}>
-                LOCATED IN BAGHDAD
-                <br />
-                BORN 2004
-              </p>
-            </div>
+              ))}
+            </ul>
+            <address className="footer-meta">
+              Located in Baghdad
+              <br />
+              Born 2004
+            </address>
           </div>
-          <div></div>
         </footer>
       </div>
 
-      {/* Background Accents */}
-      <div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100vw",
-          height: "100vh",
-          pointerEvents: "none",
-          zIndex: -1,
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "10%",
-            left: "5%",
-            width: "2px",
-            height: "80vh",
-            background: "rgba(0,0,0,0.05)",
-          }}
-        ></div>
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: 0,
-            width: "100vw",
-            height: "1px",
-            background: "rgba(0,0,0,0.05)",
-          }}
-        ></div>
+      <div className="background-accents" aria-hidden="true">
+        <span className="background-accent-vertical" />
+        <span className="background-accent-horizontal" />
       </div>
     </>
   )
